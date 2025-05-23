@@ -1,36 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
-    <head>
-        <meta charset="utf-8">
-        <title>WattEdge</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="" name="keywords">
-        <meta content="" name="description">
-
-        <!-- Google Web Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Edu+TAS+Beginner:wght@400..700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-        <!-- Icon Font Stylesheet -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
+<head>
+    <meta charset="utf-8">
+    <title>WattEdge</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com ">
+    <link rel="preconnect" href="https://fonts.gstatic.com " crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter :wght@100..900&family=Edu+TAS+Beginner:wght@400..700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css "/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons @1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js "></script>
     <style>
+        /* Your existing CSS styles remain unchanged */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: 'Inter', sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             padding: 20px;
         }
-
         .registration-container {
             max-width: 900px;
             margin: 0 auto;
@@ -40,44 +37,37 @@
             overflow: hidden;
             margin-bottom: 2rem;
         }
-
         .registration-header {
             background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
             color: white;
             padding: 40px;
             text-align: center;
         }
-
         .registration-header h1 {
             font-size: 2.8em;
             margin-bottom: 10px;
             font-weight: 700;
         }
-
         .registration-header p {
             font-size: 1.2em;
             opacity: 0.9;
         }
-
         .stats {
             background: #f8f9fa;
             padding: 30px;
             border-bottom: 2px solid #e9ecef;
         }
-
         .stats h3 {
             color: #495057;
             margin-bottom: 20px;
             text-align: center;
             font-size: 1.5em;
         }
-
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
         }
-
         .stat-card {
             background: white;
             padding: 20px;
@@ -87,49 +77,40 @@
             border-left: 5px solid;
             transition: transform 0.3s ease;
         }
-
         .stat-card:hover {
             transform: translateY(-5px);
         }
-
         .stat-card:nth-child(1) { border-left-color: #007bff; }
         .stat-card:nth-child(2) { border-left-color: #28a745; }
         .stat-card:nth-child(3) { border-left-color: #ffc107; }
         .stat-card:nth-child(4) { border-left-color: #dc3545; }
         .stat-card:nth-child(5) { border-left-color: #6f42c1; }
-
         .stat-card h4 {
             color: #495057;
             font-size: 0.95em;
             margin-bottom: 10px;
             font-weight: 600;
         }
-
         .stat-card .count {
             font-size: 2.2em;
             font-weight: bold;
             color: #007bff;
         }
-
         .loading-stats {
             font-size: 1.1em;
             color: #6c757d;
         }
-
         .form-container {
             padding: 40px;
         }
-
         .form-group {
             margin-bottom: 25px;
         }
-
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 25px;
         }
-
         .form-group label {
             display: block;
             margin-bottom: 10px;
@@ -137,7 +118,6 @@
             color: #495057;
             font-size: 1.05em;
         }
-
         .form-group input, .form-group select, .form-group textarea {
             width: 100%;
             padding: 15px;
@@ -147,21 +127,18 @@
             transition: all 0.3s ease;
             font-family: inherit;
         }
-
         .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
             outline: none;
             border-color: #007bff;
             box-shadow: 0 0 0 4px rgba(0,123,255,0.1);
             transform: translateY(-2px);
         }
-
         .customer-type {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
             margin-top: 15px;
         }
-
         .radio-card {
             position: relative;
             background: #f8f9fa;
@@ -172,7 +149,6 @@
             transition: all 0.4s ease;
             overflow: hidden;
         }
-
         .radio-card::before {
             content: '';
             position: absolute;
@@ -184,49 +160,41 @@
             transform: scaleX(0);
             transition: transform 0.3s ease;
         }
-
         .radio-card:hover {
             border-color: #007bff;
             background: #e3f2fd;
             transform: translateY(-3px);
             box-shadow: 0 10px 25px rgba(0,123,255,0.15);
         }
-
         .radio-card:hover::before {
             transform: scaleX(1);
         }
-
         .radio-card.selected {
             border-color: #007bff;
             background: #e3f2fd;
             transform: translateY(-3px);
             box-shadow: 0 10px 25px rgba(0,123,255,0.2);
         }
-
         .radio-card.selected::before {
             transform: scaleX(1);
         }
-
         .radio-card input[type="radio"] {
             position: absolute;
             opacity: 0;
             width: 0;
             height: 0;
         }
-
         .radio-content h4 {
             margin-bottom: 10px;
             color: #495057;
             font-size: 1.2em;
             font-weight: 600;
         }
-
         .radio-content p {
             font-size: 0.95em;
             color: #6c757d;
             line-height: 1.5;
         }
-
         .selected-info {
             margin-top: 20px;
             padding: 20px;
@@ -235,23 +203,19 @@
             border-left: 4px solid #007bff;
             display: none;
         }
-
         .selected-info.show {
             display: block;
             animation: slideIn 0.3s ease;
         }
-
         @keyframes slideIn {
             from { opacity: 0; transform: translateY(-10px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
         .selected-info h5 {
             color: #007bff;
             margin-bottom: 8px;
             font-weight: 600;
         }
-
         .submit-btn {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -267,7 +231,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .submit-btn::before {
             content: '';
             position: absolute;
@@ -278,32 +241,26 @@
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
             transition: left 0.5s ease;
         }
-
         .submit-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 15px 30px rgba(0,0,0,0.2);
         }
-
         .submit-btn:hover::before {
             left: 100%;
         }
-
         .submit-btn:disabled {
             opacity: 0.6;
             cursor: not-allowed;
             transform: none;
         }
-
         .loading {
             display: none;
             text-align: center;
             margin-top: 25px;
         }
-
         .loading.show {
             display: block;
         }
-
         .spinner {
             border: 4px solid #f3f3f3;
             border-top: 4px solid #007bff;
@@ -313,13 +270,10 @@
             animation: spin 1s linear infinite;
             margin: 0 auto 15px;
         }
-        
-
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-
         .success-message, .error-message {
             padding: 20px;
             border-radius: 10px;
@@ -327,81 +281,66 @@
             display: none;
             animation: fadeIn 0.5s ease;
         }
-
         .success-message {
             background: #d4edda;
             color: #155724;
             border: 2px solid #c3e6cb;
         }
-
         .error-message {
             background: #f8d7da;
             color: #721c24;
             border: 2px solid #f5c6cb;
         }
-
         .success-message.show, .error-message.show {
             display: block;
         }
-
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
         @media (max-width: 768px) {
             .form-row, .customer-type {
                 grid-template-columns: 1fr;
             }
-            
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-
             .registration-header h1 {
                 font-size: 2.2em;
             }
-
             .form-container {
                 padding: 25px;
             }
         }
-
         @media (max-width: 480px) {
             .stats-grid {
                 grid-template-columns: 1fr;
             }
-            
             body {
                 padding: 10px;
             }
         }
-
         .alert {
             padding: 15px;
             margin-bottom: 20px;
             border: 1px solid transparent;
             border-radius: 8px;
         }
-
         .alert-info {
             background: #d1ecf1;
             border-color: #bee5eb;
             color: #0c5460;
         }
-
         .alert-success {
             background: #d4edda;
             border-color: #c3e6cb;
             color: #155724;
         }
-
         .alert-warning {
             background: #fff3cd;
             border-color: #ffeaa7;
             color: #856404;
         }
-
         .setup-instructions {
             background: #e7f3ff;
             border: 2px solid #b3d9ff;
@@ -409,23 +348,19 @@
             padding: 20px;
             margin-bottom: 30px;
         }
-
         .setup-instructions h4 {
             color: #0056b3;
             margin-bottom: 15px;
             font-size: 1.3em;
         }
-
         .setup-instructions ol {
             margin-left: 20px;
             line-height: 1.6;
         }
-
         .setup-instructions li {
             margin-bottom: 8px;
             color: #495057;
         }
-
         .setup-instructions code {
             background: #f8f9fa;
             padding: 2px 6px;
@@ -435,14 +370,12 @@
         }
     </style>
 </head>
-
 <body>
     <div class="registration-container">
         <div class="registration-header">
             <h1><i class="fas fa-bolt"></i> WattEdge</h1>
             <p>Join the WattEdge community today!</p>
         </div>
-
         <div class="stats">
             <h3>Registration Statistics</h3>
             <div class="stats-grid">
@@ -468,7 +401,6 @@
                 </div>
             </div>
         </div>
-
         <div class="form-container">
             <div class="setup-instructions">
                 <h4><i class="fas fa-cog"></i> Netlify Setup Instructions</h4>
@@ -483,7 +415,6 @@
                     <li>Replace <code>nfp_xQMbV87bV1Tou83tBcKE3Rq7Yw3FDAUn7065</code> and <code>d47b09f5-78f1-49d5-b8d1-185ebee9b947</code> in the JavaScript code below</li>
                 </ol>
             </div>
-
             <div class="alert alert-success">
                 <strong><i class="fas fa-check-circle"></i> Form Configuration Status:</strong> 
                 <br>✅ Netlify Forms integration enabled
@@ -492,15 +423,12 @@
                 <br>✅ Real-time counter updates (requires API token setup)
                 <br>✅ Ready for email notifications
             </div>
-
             <!-- Netlify Forms with proper configuration -->
             <form name="wattedge-registration" method="POST" data-netlify="true" data-netlify-recaptcha="true" netlify-honeypot="bot-field" action="/" id="registrationForm">
                 <!-- Hidden honeypot field for spam protection -->
                 <input type="hidden" name="bot-field" />
-                
                 <!-- Hidden field for form name (required by Netlify) -->
                 <input type="hidden" name="form-name" value="wattedge-registration" />
-
                 <div class="form-row">
                     <div class="form-group">
                         <label for="firstName">First Name *</label>
@@ -511,7 +439,6 @@
                         <input type="text" id="lastName" name="lastName" required>
                     </div>
                 </div>
-
                 <div class="form-row">
                     <div class="form-group">
                         <label for="email">Email Address *</label>
@@ -522,12 +449,10 @@
                         <input type="tel" id="phone" name="phone" required>
                     </div>
                 </div>
-
                 <div class="form-group">
                     <label for="address">Address</label>
                     <textarea id="address" name="address" rows="3" placeholder="Enter your full address"></textarea>
                 </div>
-
                 <div class="form-group">
                     <label>Customer Type *</label>
                     <div class="customer-type">
@@ -560,13 +485,11 @@
                             </div>
                         </div>
                     </div>
-                    
                     <div class="selected-info" id="selectedInfo">
                         <h5>Selected: <span id="selectedType"></span></h5>
                         <p id="selectedDescription"></p>
                     </div>
                 </div>
-
                 <div class="form-row">
                     <div class="form-group">
                         <label for="company">Company/Organization</label>
@@ -584,34 +507,27 @@
                         </select>
                     </div>
                 </div>
-
                 <div class="form-group">
                     <label for="comments">Additional Comments</label>
                     <textarea id="comments" name="comments" rows="4" placeholder="Any additional information or special requirements"></textarea>
                 </div>
-
                 <!-- Hidden fields for additional data -->
                 <input type="hidden" name="registrationDate" id="registrationDate" />
                 <input type="hidden" name="registrationTime" id="registrationTime" />
                 <input type="hidden" name="fullName" id="fullName" />
-
                 <!-- Netlify reCAPTCHA -->
                 <div data-netlify-recaptcha="true"></div>
-
                 <button type="submit" class="submit-btn" id="submitBtn">
                     <i class="fas fa-paper-plane"></i> Register Now
                 </button>
-                
                 <div class="loading" id="loading">
                     <div class="spinner"></div>
                     <p>Processing registration and updating statistics...</p>
                 </div>
-
                 <div class="success-message" id="successMessage">
                     <strong><i class="fas fa-check-circle"></i> Registration Successful!</strong><br>
                     Thank you for registering with WattEdge! Your registration has been submitted successfully. The statistics have been updated and you will receive a confirmation email shortly.
                 </div>
-
                 <div class="error-message" id="errorMessage">
                     <strong><i class="fas fa-exclamation-circle"></i> Registration Error!</strong><br>
                     <span id="errorText">There was an error processing your registration. Please try again.</span>
@@ -619,8 +535,10 @@
             </form>
         </div>
     </div>
-
     <script>
+        // Initialize EmailJS
+        emailjs.init("JZujIY1jKLyUFh1YZ"); // Public Key
+        
         // Configuration - Replace these with your actual values
         const NETLIFY_ACCESS_TOKEN = 'nfp_xQMbV87bV1Tou83tBcKE3Rq7Yw3FDAUn7065'; // Get from Netlify dashboard
         const SITE_ID = 'd47b09f5-78f1-49d5-b8d1-185ebee9b947'; // Your site ID from Netlify
@@ -632,7 +550,7 @@
             premium: 'Exclusive premium features including priority support, dedicated account manager, and special rates.',
             government: 'Specialized accounts for government entities and public sector with tailored benefits and rates.'
         };
-
+        
         // Fetch form submissions from Netlify API
         async function fetchFormSubmissions() {
             try {
@@ -641,29 +559,25 @@
                     showFallbackCounts();
                     return;
                 }
-
-                const response = await fetch(`https://api.netlify.com/api/v1/sites/${SITE_ID}/submissions`, {
+                const response = await fetch(`https://api.netlify.com/api/v1/sites/ ${SITE_ID}/submissions`, {
                     headers: {
                         'Authorization': `Bearer ${NETLIFY_ACCESS_TOKEN}`
                     }
                 });
-
                 if (!response.ok) {
                     throw new Error('Failed to fetch submissions');
                 }
-
                 const submissions = await response.json();
                 const wattedgeSubmissions = submissions.filter(sub => 
                     sub.form_name === 'wattedge-registration' && sub.data.customerType
                 );
-
                 updateCountsFromSubmissions(wattedgeSubmissions);
             } catch (error) {
                 console.error('Error fetching submissions:', error);
                 showFallbackCounts();
             }
         }
-
+        
         // Update counts based on actual submissions
         function updateCountsFromSubmissions(submissions) {
             const counts = {
@@ -673,21 +587,19 @@
                 government: 0,
                 total: submissions.length
             };
-
             submissions.forEach(submission => {
                 const customerType = submission.data.customerType;
                 if (counts.hasOwnProperty(customerType)) {
                     counts[customerType]++;
                 }
             });
-
             animateCounterUpdate('individualCount', counts.individual);
             animateCounterUpdate('businessCount', counts.business);
             animateCounterUpdate('premiumCount', counts.premium);
             animateCounterUpdate('governmentCount', counts.government);
             animateCounterUpdate('totalCount', counts.total);
         }
-
+        
         // Show fallback counts when API is not available
         function showFallbackCounts() {
             // Show some realistic demo numbers
@@ -698,29 +610,26 @@
                 government: 12,
                 total: 271
             };
-
             animateCounterUpdate('individualCount', fallbackCounts.individual);
             animateCounterUpdate('businessCount', fallbackCounts.business);
             animateCounterUpdate('premiumCount', fallbackCounts.premium);
             animateCounterUpdate('governmentCount', fallbackCounts.government);
             animateCounterUpdate('totalCount', fallbackCounts.total);
         }
-
-        // Animate counter updates
+        
+        // Animate counter updates from 0 to target value
         function animateCounterUpdate(elementId, targetValue) {
             const element = document.getElementById(elementId);
             const startValue = 0;
             const duration = 1500;
             const startTime = performance.now();
-
+            
             function updateCounter(currentTime) {
                 const elapsed = currentTime - startTime;
                 const progress = Math.min(elapsed / duration, 1);
-                
                 // Easing function for smooth animation
                 const easeOutQuart = 1 - Math.pow(1 - progress, 4);
                 const currentValue = Math.floor(startValue + (targetValue - startValue) * easeOutQuart);
-                
                 element.textContent = currentValue;
                 element.classList.remove('loading-stats');
                 
@@ -730,27 +639,24 @@
                     element.textContent = targetValue;
                 }
             }
-
             requestAnimationFrame(updateCounter);
         }
-
+        
         // Handle customer type selection
         function updateSelection(value) {
             document.querySelectorAll('.radio-card').forEach(card => {
                 card.classList.remove('selected');
             });
-
             const selectedCard = document.querySelector(`[data-value="${value}"]`);
             if (selectedCard) {
                 selectedCard.classList.add('selected');
             }
-
             const typeName = value.charAt(0).toUpperCase() + value.slice(1);
             document.getElementById('selectedType').textContent = typeName;
             document.getElementById('selectedDescription').textContent = descriptions[value];
             document.getElementById('selectedInfo').classList.add('show');
         }
-
+        
         // Add click event listeners to radio cards
         document.querySelectorAll('.radio-card').forEach(card => {
             card.addEventListener('click', function() {
@@ -759,7 +665,7 @@
                 updateSelection(input.value);
             });
         });
-
+        
         // Add change event listeners to radio inputs
         document.querySelectorAll('input[name="customerType"]').forEach(input => {
             input.addEventListener('change', function() {
@@ -768,48 +674,41 @@
                 }
             });
         });
-
+        
         // Form validation
         function validateForm(formData) {
             const errors = [];
-            
             if (!formData.get('firstName')?.trim()) {
                 errors.push('First name is required');
             }
-            
             if (!formData.get('lastName')?.trim()) {
                 errors.push('Last name is required');
             }
-            
             const email = formData.get('email')?.trim();
             if (!email) {
                 errors.push('Email is required');
             } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
                 errors.push('Please enter a valid email address');
             }
-            
             if (!formData.get('phone')?.trim()) {
                 errors.push('Phone number is required');
             }
-            
             if (!formData.get('customerType')) {
                 errors.push('Please select a customer type');
             }
-            
             return errors;
         }
-
+        
         // Prepare form data before submission
         function prepareFormData() {
             const now = new Date();
             const firstName = document.getElementById('firstName').value;
             const lastName = document.getElementById('lastName').value;
-            
             document.getElementById('registrationDate').value = now.toLocaleDateString();
             document.getElementById('registrationTime').value = now.toLocaleTimeString();
             document.getElementById('fullName').value = `${firstName} ${lastName}`.trim();
         }
-
+        
         // Handle form submission
         document.getElementById('registrationForm').addEventListener('submit', async function(e) {
             e.preventDefault(); // Prevent default submission initially
@@ -825,19 +724,18 @@
                 document.getElementById('successMessage').classList.remove('show');
                 return;
             }
-
+            
             // Prepare additional data
             prepareFormData();
-
+            
             // Show loading state
             const submitBtn = document.getElementById('submitBtn');
             const loading = document.getElementById('loading');
-            
             submitBtn.disabled = true;
             loading.classList.add('show');
             document.getElementById('successMessage').classList.remove('show');
             document.getElementById('errorMessage').classList.remove('show');
-
+            
             try {
                 // Submit form to Netlify
                 const response = await fetch('/', {
@@ -845,8 +743,22 @@
                     headers: { "Content-Type": "application/x-www-form-urlencoded" },
                     body: new URLSearchParams(formData).toString()
                 });
-
+                
                 if (response.ok) {
+                    // Send confirmation email via EmailJS
+                    const serviceID = "service_fzu5snd"; // Service ID
+                    const templateID = "template_qc3ssnl"; // Template ID
+                    
+                    const emailParams = {
+                        to_email: formData.get('email'),
+                        to_name: formData.get('firstName'),
+                        message: "Thank you for registering with WattEdge!",
+                        registration_type: formData.get('customerType'),
+                        reply_to: formData.get('email')
+                    };
+                    
+                    await emailjs.send(serviceID, templateID, emailParams);
+                    
                     // Show success message
                     document.getElementById('successMessage').classList.add('show');
                     
@@ -872,7 +784,7 @@
                 submitBtn.disabled = false;
             }
         });
-
+        
         // Add smooth animations for radio card interactions
         document.querySelectorAll('.radio-card').forEach(card => {
             card.addEventListener('mouseenter', function() {
@@ -880,23 +792,20 @@
                     this.style.transform = 'translateY(-5px) scale(1.02)';
                 }
             });
-
             card.addEventListener('mouseleave', function() {
                 if (!this.classList.contains('selected')) {
                     this.style.transform = 'translateY(0) scale(1)';
                 }
             });
         });
-
+        
         // Initialize page
         document.addEventListener('DOMContentLoaded', function() {
             // Load initial counts
             fetchFormSubmissions();
-            
             // Refresh counts every 30 seconds to keep them updated
             setInterval(fetchFormSubmissions, 30000);
         });
     </script>
-
 </body>
 </html>
